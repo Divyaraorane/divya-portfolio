@@ -5,22 +5,9 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== Premium Animated Background ===== */
 body {
-  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
-  background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
+  background: #0f172a;
   color: white;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 a {
@@ -28,14 +15,12 @@ a {
   color: white;
 }
 
-/* ===== Glass Navbar ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
-  backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.4);
+
   position: sticky;
   top: 0;
   z-index: 100;
@@ -49,7 +34,6 @@ a {
 
 .logo {
   color: gold;
-  font-weight: 700;
 }
 
 .hamburger {
@@ -58,52 +42,34 @@ a {
   cursor: pointer;
 }
 
-/* ===== Hero ===== */
 .hero {
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 60px;
+  background: linear-gradient(135deg,#2563eb,#7c3aed);
 }
 
 .hero h1 span {
   color: gold;
 }
 
-/* Floating Profile */
 .hero-img img {
   width: 260px;
   border-radius: 50%;
   border: 5px solid gold;
-  animation: float 4s ease-in-out infinite;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
-}
-
-/* ===== Sections Reveal Animation ===== */
 .section {
   padding: 80px 60px;
   text-align: center;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: 0.8s ease;
-}
-
-.section.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .dark {
-  background: rgba(0,0,0,0.3);
+  background: #020617;
 }
 
-/* ===== Grid ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -111,45 +77,33 @@ a {
   margin-top: 40px;
 }
 
-/* ===== Premium Glass Cards ===== */
 .card {
   padding: 25px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.4s ease;
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px gold;
 }
 
-/* ===== Timeline ===== */
 .timeline-card {
   max-width: 600px;
   margin: auto;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.08);
   padding: 30px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
+  border-radius: 15px;
 }
 
-/* ===== Premium Buttons ===== */
 .btn {
-  padding: 12px 24px;
-  border-radius: 30px;
-  background: linear-gradient(45deg, gold, orange);
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: gold;
   color: black;
   font-weight: 600;
   display: inline-block;
-  transition: 0.4s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px gold;
 }
 
 .outline {
@@ -158,26 +112,6 @@ a {
   color: gold;
 }
 
-.outline:hover {
-  background: gold;
-  color: black;
-}
-
-.download {
-  background: linear-gradient(45deg, #22c55e, #16a34a);
-  color: white;
-}
-
-.buttons {
-  margin-top: 25px;
-}
-
-.buttons .btn {
-  margin-right: 15px;
-  margin-bottom: 10px;
-}
-
-/* ===== Contact ===== */
 .contact-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -198,13 +132,58 @@ footer {
   background: black;
 }
 
-/* ===== Responsive ===== */
+@media(max-width:768px){
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .navbar ul {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+@media(max-width:768px){
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #020617;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+}
+
+
+
+
+
+/* ================= MOBILE RESPONSIVE IMPROVEMENTS ================= */
+
 @media (max-width: 992px) {
+
+  .navbar {
+    padding: 20px 30px;
+  }
 
   .hero {
     flex-direction: column;
     text-align: center;
     padding: 60px 30px;
+  }
+
+  .hero-text {
+    margin-bottom: 40px;
   }
 
   .hero-img img {
@@ -220,7 +199,51 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+/* Small Mobile Devices */
+@media (max-width: 576px) {
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero h3 {
+    font-size: 18px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-img img {
+    width: 170px;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+@media(max-width:768px){
 
   .navbar ul {
     display: none;
@@ -235,11 +258,13 @@ footer {
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   }
 
+  .navbar ul li {
+    margin-bottom: 12px;
+  }
+
   .navbar ul.show {
     display: flex;
   }
 
-  .hamburger {
-    display: block;
-  }
 }
+
