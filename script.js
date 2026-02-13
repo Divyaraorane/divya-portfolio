@@ -1,8 +1,12 @@
-const toggleBtn = document.getElementById("themeToggle");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", function () {
-    document.body.classList.toggle("light-mode");
-  });
-}
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
+  if (hamburger && menu) {
+    hamburger.addEventListener("click", function () {
+      menu.classList.toggle("show");
+    });
+  }
+
+});
