@@ -164,6 +164,23 @@ footer {
 
 }
 
+.buttons {
+  margin-top: 25px;
+}
+
+.buttons .btn {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.download {
+  background: #22c55e;
+  color: white;
+}
+
+.download:hover {
+  background: #16a34a;
+}
 
 
 
