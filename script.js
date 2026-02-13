@@ -5,3 +5,4 @@ if (toggleBtn) {
     document.body.classList.toggle("light-mode");
   });
 }
+
