@@ -15,12 +15,13 @@ a {
   color: white;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 60px;
   background: rgba(0,0,0,0.4);
-
   position: sticky;
   top: 0;
   z-index: 100;
@@ -34,6 +35,7 @@ a {
 
 .logo {
   color: gold;
+  font-weight: 700;
 }
 
 .hamburger {
@@ -42,6 +44,7 @@ a {
   cursor: pointer;
 }
 
+/* ===== HERO ===== */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -61,6 +64,7 @@ a {
   border: 5px solid gold;
 }
 
+/* ===== SECTIONS ===== */
 .section {
   padding: 80px 60px;
   text-align: center;
@@ -70,6 +74,7 @@ a {
   background: #020617;
 }
 
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -77,6 +82,7 @@ a {
   margin-top: 40px;
 }
 
+/* ===== CARD ===== */
 .card {
   padding: 25px;
   background: rgba(255,255,255,0.08);
@@ -97,6 +103,7 @@ a {
   border-radius: 15px;
 }
 
+/* ===== BUTTONS ===== */
 .btn {
   padding: 10px 20px;
   border-radius: 25px;
@@ -112,6 +119,25 @@ a {
   color: gold;
 }
 
+.buttons {
+  margin-top: 25px;
+}
+
+.buttons .btn {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.download {
+  background: #22c55e;
+  color: white;
+}
+
+.download:hover {
+  background: #16a34a;
+}
+
+/* ===== CONTACT ===== */
 .contact-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -126,50 +152,16 @@ input, textarea {
   border: none;
 }
 
+/* ===== FOOTER ===== */
 footer {
   padding: 15px;
   text-align: center;
   background: black;
 }
 
-@media(max-width:768px){
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .navbar ul {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-  }
-}
-@media(max-width:768px){
+/* ================= RESPONSIVE ================= */
 
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #020617;
-    padding: 20px;
-    border-radius: 12px;
-    width: 220px;
-  }
-
-  .navbar ul.show {
-    display: flex;
-  }
-
-}
-
-
-
-
-
-/* ================= MOBILE RESPONSIVE IMPROVEMENTS ================= */
-
+/* Tablet */
 @media (max-width: 992px) {
 
   .navbar {
@@ -180,10 +172,6 @@ footer {
     flex-direction: column;
     text-align: center;
     padding: 60px 30px;
-  }
-
-  .hero-text {
-    margin-bottom: 40px;
   }
 
   .hero-img img {
@@ -199,15 +187,32 @@ footer {
   }
 }
 
-/* Small Mobile Devices */
-@media (max-width: 576px) {
+/* Mobile */
+@media (max-width: 768px) {
 
-  .navbar {
-    padding: 15px 20px;
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #020617;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   }
 
-  .hero {
-    padding: 50px 20px;
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    margin-bottom: 12px;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .hero h1 {
@@ -243,28 +248,3 @@ footer {
     font-size: 13px;
   }
 }
-@media(max-width:768px){
-
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #020617;
-    padding: 20px;
-    border-radius: 12px;
-    width: 220px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-  }
-
-  .navbar ul li {
-    margin-bottom: 12px;
-  }
-
-  .navbar ul.show {
-    display: flex;
-  }
-
-}
-
